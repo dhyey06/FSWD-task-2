@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        function toggleMenu() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        }
+    </script>
+    <style>
+        .button {
+            background: #ffffff;
+            color: black;
+            font-weight: bold;
+            width: 150px;
+            cursor: pointer;
+            border: 1px solid #3a3a3a;
+            padding: 10px;
+            margin: auto;
+            border-radius: 200px;
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body class="bg-[#000000ed] text-gray-200">
+    <div class="flex h-screen">
+        <!-- Sidebar -->
+        <aside class="w-64 bg-[#272727] text-white p-5 hidden md:flex flex-col">
+            <h2 class="text-2xl font-bold mb-6">Dashboard</h2>
+            <nav class="flex-1">
+                <ul>
+                    <li class="p-3 hover:bg-[#464646] rounded cursor-pointer">🏠 Home</li>
+                    <li class="p-3 hover:bg-[#464646] rounded cursor-pointer">📊 Analytics</li>
+                    <li class="p-3 hover:bg-[#464646] rounded cursor-pointer">⚙️ Settings</li>
+                    <li class="p-3 hover:bg-[#464646] rounded cursor-pointer">📝 Reports</li>
+                    <li class="p-3 hover:bg-[#464646] rounded cursor-pointer">📧 Messages</li>
+                </ul>
+            </nav>
+            <button class="button">Logout</button>
+        </aside>
+        
+        <!-- Main Content -->
+        <div class="flex-1 flex flex-col">
+            <!-- Navbar -->
+            <header class="bg-[#272727] shadow p-4 flex justify-between items-center">
+                <h1 class="text-xl font-bold">Dashboard</h1>
+                <button onclick="toggleMenu()" class="md:hidden bg-[#464646] text-white px-4 py-2 rounded">☰</button>
+            </header>
+            
+            <!-- Mobile Dropdown Menu -->
+            <div id="mobile-menu" class="md:hidden bg-[#272727] text-white p-5 hidden absolute top-16 right-4 w-48 rounded-lg shadow-lg">
+                <ul>
+                    <li class="p-3 hover:bg-[#464646] rounded cursor-pointer">🏠 Home</li>
+                    <li class="p-3 hover:bg-[#464646] rounded cursor-pointer">📊 Analytics</li>
+                    <li class="p-3 hover:bg-[#464646] rounded cursor-pointer">⚙️ Settings</li>
+                    <li class="p-3 hover:bg-[#464646] rounded cursor-pointer">📝 Reports</li>
+                    <li class="p-3 hover:bg-[#464646] rounded cursor-pointer">📧 Messages</li>
+                </ul>
+                <button class="button">Logout</button>
+            </div>
+            
+            <!-- Content -->
+            <main class="p-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-[#272727] p-6 rounded-lg shadow flex flex-col items-center">
+                    <h3 class="text-lg font-bold">Users</h3>
+                    <p class="text-3xl font-semibold">1,250</p>
+                </div>
+                <div class="bg-[#272727] p-6 rounded-lg shadow flex flex-col items-center">
+                    <h3 class="text-lg font-bold">Revenue</h3>
+                    <p class="text-3xl font-semibold">₹ 100,00,000</p>
+                </div>
+                <div class="bg-[#272727] p-6 rounded-lg shadow flex flex-col items-center">
+                    <h3 class="text-lg font-bold">Orders</h3>
+                    <p class="text-3xl font-semibold">320</p>
+                </div>
+                <div class="bg-[#272727] p-6 rounded-lg shadow flex flex-col items-center">
+                    <h3 class="text-lg font-bold">Growth</h3>
+                    <p class="text-3xl font-semibold">+12%</p>
+                </div>
+                <div class="bg-[#272727] p-6 rounded-lg shadow flex flex-col items-center">
+                    <h3 class="text-lg font-bold">New Customers</h3>
+                    <p class="text-3xl font-semibold">150</p>
+                </div>
+                <div class="bg-[#272727] p-6 rounded-lg shadow flex flex-col items-center">
+                    <h3 class="text-lg font-bold">Tickets Resolved</h3>
+                    <p class="text-3xl font-semibold">98%</p>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>
